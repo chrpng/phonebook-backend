@@ -40,7 +40,17 @@ morgan.token('body', (req, res) => {
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello Phonebook</h1>')
+  res.send(`
+    <h1>Hello Phonebook</h1>
+    <h3>Commands</h3>
+    <p>GET /api/persons</p>
+    <p>GET /api/persons/:id</p>
+    <p>GET /info</p>
+    
+    <p>POST /api/persons Request Object requires name and number props</p>
+    
+    <p>DELETE /api/persons/:id</p>
+  `)
 })
 
 app.get('/api/persons', (req, res) => {
