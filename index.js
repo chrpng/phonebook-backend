@@ -27,6 +27,8 @@ let persons = [
 ]
 
 // Middlewares
+// checks build directory for addresses when GET request is received (serve static content)
+app.use(express.static('build'))
 // use express's json-parser to read from req body
 app.use(express.json())
 
