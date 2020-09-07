@@ -58,9 +58,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/persons', (req, res) => {
-  Person.find({}).then(persons => {
-    res.json(persons)
-  })
+  Person.find({})
+    .then(persons => {
+      res.json(persons)
+    })
 })
 
 app.get('/api/persons/:id', (req, res, next) => {
@@ -69,6 +70,7 @@ app.get('/api/persons/:id', (req, res, next) => {
   Person.findById(id)
     .then(person => {
       if(person) {
+        console.log(person)
         res.json(person)
       } else {
         res.status(404).end()
