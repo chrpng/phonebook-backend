@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const { v4: uuidv4 } = require('uuid');
 
 if (process.argv.length < 3) {
   console.log('Please provide the password as an argument: node mongo.js <password>')
